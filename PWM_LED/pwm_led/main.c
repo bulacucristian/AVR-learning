@@ -36,13 +36,14 @@ int main(void)
 		_delay_ms(80);
 		sei();
 		if(state == 0)
-		duty_cycle -=10;
-		if(duty_cycle == 0)
-		{
-			state = 1;
+		{		
+			duty_cycle -=10;
+			if(duty_cycle == 0)
+			{
+				state = 1;
+			}
 		}
-		
-		if(state == 1)
+		else		
 		{
 			cli();
 			_delay_ms(80);
